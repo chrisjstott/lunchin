@@ -1,11 +1,11 @@
-# Lunchin
+# Lunchin'
 
 [Heroku link][heroku]
 
 [heroku]: 
 
 ## Minimum Viable Product
-Lunchin is a Yelp clone optimized for food trucks.
+Lunchin' is a Yelp clone optimized for food trucks.
 
 Users can
 - [ ] See what food trucks are near them
