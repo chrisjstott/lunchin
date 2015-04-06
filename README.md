@@ -1,8 +1,8 @@
-# Flux-capacitr
+# Lunchin
 
 [Heroku link][heroku]
 
-[heroku]: http://flux-capacitr.herokuapp.com
+[heroku]: 
 
 ## Minimum Viable Product
 Lunchin is a Yelp clone optimized for food trucks.
