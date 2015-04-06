@@ -18,7 +18,7 @@ id          | integer   | not null, primary key
 rating      | float     | 
 owner_id    | integer   | not null, foreign key (references users)
 
-## review
+## reviews
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
@@ -27,7 +27,7 @@ business_id | integer   | not null, foreign key (references businesses)
 rating      | integer   | not null
 body        | string    | not null
 
-## opening
+## openings
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
