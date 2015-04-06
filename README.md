@@ -14,6 +14,7 @@ Users can
 - [ ] Log in
 - [ ] Give ratings/reviews
 - [ ] Read reviews
+
 Business Owners can
 - [ ] Update their location
 - [ ] Post their schedule
