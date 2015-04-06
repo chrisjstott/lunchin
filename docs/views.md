@@ -1,26 +1,34 @@
 # View Wireframes
 
-## New Session
-![new-session]
+## Business Show
+![business_show]
 
-## Feed Show (landing page)
-![feed-show]
+## Review Item (on Business Show page)
+![business_show_review_item]
 
-## Blog Show
-![blog-show]
+## New Session Form
+![new_session_form]
 
-## Post Show
-![post-show]
+## New Opening Form
+![new_opening_form]
 
-## Post Form
-![post-form]
+## Openings Index
+![openings_index]
+
+## New Review Form
+![new_review_form]
 
 ## Search Results
-![search-results]
+![search_results]
 
-[new-session]: ./wireframes/new_session.png
-[feed-show]: ./wireframes/feed_show.png
-[blog-show]: ./wireframes/blog_show.png
-[post-show]: ./wireframes/post_show.png
-[post-form]: ./wireframes/post_form.png
-[search-results]: ./wireframes/search_results.png
+# New User Form
+![new_user_form]
+
+[business_show]: ./wireframes/business_show.jpg
+[new_session_form]: ./wireframes/login_form.jpg
+[new_opening_form]: ./wireframes/opening_form.jpg
+[openings_index]: ./wireframes/openings_index.jpg
+[new_review_form]: ./wireframes/review_form.jpg
+[business_show_review_item]: ./wireframes/review_item.jpg
+[search_results]: ./wireframes/search_results.jpg
+[new_user_form]: ./wireframes/signup_form.jpg
