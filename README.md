@@ -28,15 +28,15 @@ Business Owners can
 
 ## Implementation Timeline
 
-### Phase 1: User Authentication, Blog Creation (~1 day)
+### Phase 1: Users/Auth (~1 day)
 
-### Phase 2: Viewing Blogs and Posts (~2 days)
+### Phase 2: Businesses (~2 days)
 
-### Phase 3: Editing and Displaying Posts (~2 days)
+### Phase 3: Reviews (~1 days)
 
-### Phase 4: User Feeds (~1-2 days)
+### Phase 4: Openings (~2 days)
 
-### Phase 5: Searching for Blogs and Posts (~2 days)
+### Phase 5: Search (~2 days)
 
 ### Bonus Features (TBD)
 - [ ] Search by time/day (See what will be around tomorrow at lunch)
