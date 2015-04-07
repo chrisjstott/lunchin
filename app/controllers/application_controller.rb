@@ -16,6 +16,8 @@ class ApplicationController < ActionController::Base
     session[:token] = nil
   end
 
-
+  def signed_in?
+    !!current_user
+  end
 
 end
