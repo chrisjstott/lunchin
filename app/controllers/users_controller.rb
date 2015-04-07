@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      login(@user)
+      sign_in(@user)
       render text: "logged in"
     else
       flash.now[:errors] = @user.errors.full_messages

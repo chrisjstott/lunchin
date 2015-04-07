@@ -1,0 +1,6 @@
+mismatch between database column name "location" and form label "zip code"
+  should column be renamed?
+  should users input zip code but save city string in database?
+    this makes sense because we only want to convert the zip to a city once, and not every time a user is rendered
+  should there be columns for zip AND city?
+    this might make sense for yelp if they want to track statistics this way, but probably not for this project
