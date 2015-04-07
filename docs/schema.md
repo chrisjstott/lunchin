@@ -15,7 +15,7 @@ photo_url       | string    |
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-rating      | float     | 
+rating      | float     |
 owner_id    | integer   | not null, foreign key (references users)
 
 ## reviews
@@ -24,7 +24,6 @@ column name | data type | details
 id          | integer   | not null, primary key
 author_id   | integer   | not null, foreign key (references users)
 business_id | integer   | not null, foreign key (references businesses)
-rating      | integer   | not null
 body        | string    | not null
 
 ## openings

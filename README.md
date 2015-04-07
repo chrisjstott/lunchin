@@ -2,7 +2,7 @@
 
 [Heroku link][heroku]
 
-[heroku]: 
+[heroku]:
 
 ## Minimum Viable Product
 Lunchin is a Yelp clone optimized for food trucks.
@@ -32,11 +32,12 @@ Business Owners can
 
 ### Phase 2: Businesses (~2 days)
 
-### Phase 3: Reviews (~1 days)
+### Phase 3: Search (~2 days)
 
-### Phase 4: Openings (~2 days)
+### Phase 4: Reviews (~1 days)
 
-### Phase 5: Search (~2 days)
+### Phase 5: Openings (~2 days)
+
 
 ### Bonus Features (TBD)
 - [ ] Search by time/day (See what will be around tomorrow at lunch)
