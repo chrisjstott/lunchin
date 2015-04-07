@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       login(@user)
       render text: "logged in"
     else
-      flash.now = @user.errors.full_messages
+      flash.now[:errors] = @user.errors.full_messages
       render :new
     end
   end
