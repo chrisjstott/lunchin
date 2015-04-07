@@ -30,6 +30,8 @@ GEM
     annotate (2.6.8)
       activerecord (>= 3.2, <= 4.3)
       rake (~> 10.4)
+    area (0.10.0)
+      fastercsv (~> 1.5)
     arel (5.0.1.20140414130214)
     autoprefixer-rails (5.1.7)
       execjs
@@ -49,6 +51,7 @@ GEM
     coffee-script-source (1.9.1)
     erubis (2.7.0)
     execjs (2.4.0)
+    fastercsv (1.5.5)
     hike (1.2.3)
     i18n (0.7.0)
     jbuilder (2.2.12)
@@ -128,6 +131,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  area
   bcrypt (~> 3.1.7)
   bootstrap-sass
   coffee-rails (~> 4.0.0)

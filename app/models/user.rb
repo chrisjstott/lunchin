@@ -21,9 +21,9 @@ class User < ActiveRecord::Base
   validates :first_name, :last_name, :location, :password_digest, presence: true
   validates :email, :session_token, presence: true, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
-  validates :location, length: { is: 5 }
+  validates :zip_code, length: { is: 5, message: "is invalid" }
 
-  attr_reader :password
+  attr_reader :password, :zip_code
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
@@ -33,6 +33,11 @@ class User < ActiveRecord::Base
 
   def self.generate_session_token
     SecureRandom::urlsafe_base64
+  end
+
+  def zip_code=(zip_code)
+    @zip_code = zip_code
+    self.location = zip_code.to_region
   end
 
   def password=(password)

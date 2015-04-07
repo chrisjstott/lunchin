@@ -32,6 +32,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'annotate'
 gem 'pry-rails'
 gem 'bootstrap-sass'
+gem 'area'
 # Use unicorn as the app server
 # gem 'unicorn'
 
