@@ -30,6 +30,8 @@ gem 'spring',        group: :development
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'annotate'
+gem 'pry-rails'
+gem 'bootstrap-sass'
 # Use unicorn as the app server
 # gem 'unicorn'
 
