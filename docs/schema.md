@@ -16,7 +16,7 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 name        | string    | not null
-owner_id    | integer   | not null, foreign key (references users)
+owner_id    | integer   | foreign key (references users)
 
 ## reviews
 column name | data type | details
