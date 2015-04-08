@@ -1,0 +1,1 @@
+how to not show a validation error (only want to show zip code error, not location)

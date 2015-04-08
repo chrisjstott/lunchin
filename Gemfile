@@ -33,6 +33,8 @@ gem 'annotate'
 gem 'pry-rails'
 gem 'bootstrap-sass'
 gem 'area'
+gem 'better_errors'
+gem 'binding_of_caller'
 # Use unicorn as the app server
 # gem 'unicorn'
 
@@ -40,4 +42,4 @@ gem 'area'
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'byebug', group: [:development, :test]

@@ -1,18 +1,19 @@
 class SessionsController < ApplicationController
   def new
+    @user = User.new
     render :new
   end
 
   def create
-    username = user_params[:username]
-    password = user_params[:password]
+    email = params[:user][:email]
+    password = params[:user][:password]
 
-    @user = User.find_by_credentials(username, password)
+    @user = User.find_by_credentials(email, password)
     if @user
-      User.sign_in(@user)
+      sign_in(@user)
       render text: "signed in"
     else
-      flash.now[:errors] = ["Invalid username/password"]
+      flash.now[:errors] = ["Invalid email/password"]
       render :new
     end
   end
