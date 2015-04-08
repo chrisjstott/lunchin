@@ -23,6 +23,8 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :zip_code, length: { is: 5, message: "is invalid" }
 
+  has_many :businesses, foreign_key: :owner_id
+
   attr_reader :password, :zip_code
 
   def self.find_by_credentials(email, password)
