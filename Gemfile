@@ -35,6 +35,7 @@ gem 'bootstrap-sass'
 gem 'area'
 gem 'better_errors'
 gem 'binding_of_caller'
+gem 'newrelic_rpm'
 # Use unicorn as the app server
 # gem 'unicorn'
 
