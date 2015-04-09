@@ -18,5 +18,5 @@ Lunchin.Collections.Businesses = Backbone.Collection.extend({
     }
 
     return business;
-  },
+  },  
 });

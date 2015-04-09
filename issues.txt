@@ -1,1 +1,10 @@
 how to not show a validation error (only want to show zip code error, not location)
+
+for search results, should the backbone router narrow down the business listings?
+  so, I could iterate through the collection, but it's better to do this search at the db level
+  I want all businesses where the name (for now) matches the search term
+    where search_term is in business.name
+  render these as json in rails api
+  how to get the search term from backbone to rails?
+    FORM
+  form posts to api/search  
