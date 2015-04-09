@@ -4,7 +4,8 @@ window.Lunchin = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+    new Lunchin.Routers.Router;
+    Backbone.history.start();
   }
 };
 

@@ -20,11 +20,17 @@ module Api
         render json: "Page not found", status: 404
       end
     end
+
+    def index
+      @businesses = Business.all
+      render json: @businesses
+    end
+
+    private
+
+      def business_params
+        params.require(:business).permit(:owner_id, :name)
+      end
   end
 
-private
-
-  def business_params
-    params.require(:business).permit(:owner_id, :name)
-  end
 end
