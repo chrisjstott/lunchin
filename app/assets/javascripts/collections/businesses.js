@@ -10,7 +10,6 @@ Lunchin.Collections.Businesses = Backbone.Collection.extend({
       business = new Lunchin.Models.Business({id: id});
       business.fetch({
         success: function() {
-          debugger
           this.add(business);
         }.bind(this)
       });

@@ -11,6 +11,7 @@ Lunchin.Routers.Router = Backbone.Router.extend({
 
   businessShow: function(id) {
     var business = this.collection.getOrFetch(id);
+    debugger
     var view = new Lunchin.Views.BusinessShow({ model: business });
     this._swapView(view);
   },
