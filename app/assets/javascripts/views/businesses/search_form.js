@@ -9,9 +9,7 @@ Lunchin.Views.SearchForm = Backbone.View.extend({
   },
 
   submit: function(event) {
-    debugger
-    event.preventDefault();
-    Backbone.history.navigate('businesses', {trigger: true});
+    event.preventDefault
   }
 
 });

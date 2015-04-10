@@ -24,7 +24,6 @@ module Api
     def index
       if params[:search]
         search_term = params[:search][:search_term]
-        
         @businesses = Business.where("name LIKE ?", "%#{search_term}%")
       else
         @businesses = Business.all

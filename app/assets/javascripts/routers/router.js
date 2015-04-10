@@ -8,7 +8,7 @@ Lunchin.Routers.Router = Backbone.Router.extend({
   routes: {
     'businesses': 'businessIndex',
     'businesses/:id': 'businessShow',
-    'search': 'search'
+    'search': 'searchForm',
   },
 
   businessShow: function(id) {
@@ -23,12 +23,9 @@ Lunchin.Routers.Router = Backbone.Router.extend({
     this._swapView(view);
   },
 
-  search: function() {
+  searchForm: function() {
     var view = new Lunchin.Views.SearchForm();
     this._swapView(view);
-  },
-
-  searchResults: function() {
   },
 
   _swapView: function(view) {

@@ -2,7 +2,6 @@ Lunchin.Collections.Businesses = Backbone.Collection.extend({
   url: 'api/businesses',
   model: Lunchin.Models.Business,
 
-
   getOrFetch: function(id) {
     var business = this.get(id);
 
@@ -18,5 +17,5 @@ Lunchin.Collections.Businesses = Backbone.Collection.extend({
     }
 
     return business;
-  },  
+  },
 });
