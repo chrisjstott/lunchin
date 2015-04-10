@@ -1,11 +1,13 @@
-<div class="business-photo"></div>
+<div class="business-photo">
+  <img src="<%= business.escape('photo_url') %>" alt="business photo" />
+</div>
 <div class="business-info">
   <h5><%= business.escape('name') %></h5>
   <div>
     Rating
   </div>
   <ul>
-    <li>Address</li>
+    <li><%= business.escape('location') %></li>
     <li>Hours</li>
   </ul>
 </div>

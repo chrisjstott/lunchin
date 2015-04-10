@@ -7,11 +7,13 @@
 #  owner_id   :integer
 #  created_at :datetime
 #  updated_at :datetime
+#  photo_url  :string(255)
+#  location   :string(255)
 #
 
 class Business < ActiveRecord::Base
 
-validates :name, presence: true
+validates :name, :photo_url, :location, presence: true
 
 belongs_to :owner, class_name: "User"
 

@@ -7,7 +7,6 @@ Lunchin.Views.BusinessShow = Backbone.View.extend({
 
   render: function() {
     var content = this.template({ business: this.model });
-    debugger
     this.$el.html(content);
     return this;
   }

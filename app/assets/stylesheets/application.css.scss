@@ -16,3 +16,15 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+nav.navbar {
+  background-color: firebrick
+}
+
+.btn-search {
+  background-color: darkred
+}
+
+.glyphicon-search {
+  color: white
+}
