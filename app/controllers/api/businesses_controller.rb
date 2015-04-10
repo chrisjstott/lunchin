@@ -23,8 +23,8 @@ module Api
 
     def index
       if params[:search]
-        search_term = params[:search][:search_term]
-        @businesses = Business.where("name LIKE ?", "%#{search_term}%")
+        search_query = params[:search]
+        @businesses = Business.where("name LIKE ?", "%#{search_query}%")
       else
         @businesses = Business.all
       end
@@ -36,10 +36,5 @@ module Api
       def business_params
         params.require(:business).permit(:owner_id, :name)
       end
-
-      def search_parms
-        params.require(:search).permit(:search_term)
-      end
   end
-
 end

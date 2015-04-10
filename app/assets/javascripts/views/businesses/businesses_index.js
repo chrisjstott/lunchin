@@ -6,7 +6,7 @@ Lunchin.Views.BusinessesIndex = Backbone.CompositeView.extend({
     this.listenTo(this.collection, 'add', this.addListing);
     this.listenTo(this.collection, 'sync', this.render);
 
-    this.collection.each(this.addListing.bind(this));
+    // this.collection.each(this.addListing.bind(this));
   },
 
   addListing: function(business) {

@@ -9,7 +9,8 @@ Lunchin.Views.SearchForm = Backbone.View.extend({
   },
 
   submit: function(event) {
-    event.preventDefault
+    event.preventDefault();
+    var searchQuery = $(event.target).serializeJSON().query;
+    Backbone.history.navigate('search/' + searchQuery, {trigger: true});
   }
-
 });
