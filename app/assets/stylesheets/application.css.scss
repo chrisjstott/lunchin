@@ -17,14 +17,58 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-nav.navbar {
-  background-color: firebrick
-}
-
 .btn-search {
-  background-color: darkred
+  background-color: darkred;
 }
 
 .glyphicon-search {
-  color: white
+  color: white;
+}
+
+.logo {
+  color: white;
+}
+
+.navbar {
+  background-color: firebrick;
+  height: auto;
+  padding: 10px;
+}
+
+.business-list-item {
+  height: auto;
+  border-top: 1px lightgray solid;
+  padding: 15px;
+  margin: 15px;
+}
+
+.search-input {
+  width: 800px;
+}
+
+.business-list-item > * {
+  float: left;
+}
+
+.business-photo {
+  height: 80px;
+  width: 80px;
+}
+
+.business-info {
+  margin-left: 20px;
+}
+
+li {
+  list-style-type: none;
+}
+
+ul {
+  padding: 0px;
+}
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
 }

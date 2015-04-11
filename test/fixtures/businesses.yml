@@ -9,6 +9,8 @@
 #  updated_at :datetime
 #  photo_url  :string(255)
 #  location   :string(255)
+#  latitude   :float
+#  longitude  :float
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

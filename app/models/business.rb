@@ -9,12 +9,17 @@
 #  updated_at :datetime
 #  photo_url  :string(255)
 #  location   :string(255)
+#  latitude   :float
+#  longitude  :float
 #
 
 class Business < ActiveRecord::Base
 
-validates :name, :photo_url, :location, presence: true
+validates :name, :location, presence: true
 
 belongs_to :owner, class_name: "User"
+
+geocoded_by :location
+after_validation :geocode
 
 end
