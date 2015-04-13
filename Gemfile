@@ -39,6 +39,7 @@ gem 'newrelic_rpm'
 gem 'backbone-on-rails'
 gem 'geocoder'
 gem 'sprockets_better_errors'
+gem 'rails_12factor'
 # Use unicorn as the app server
 # gem 'unicorn'
 
