@@ -33,8 +33,10 @@ Lunchin.Routers.Router = Backbone.Router.extend({
   },
 
   searchResults: function(query) {
+    var url = 'api/businesses?search=' + query;
+
     var matchingBusinesses = new Lunchin.Collections.SearchResults({
-      searchQuery: query
+      url: url
     });
     matchingBusinesses.fetch();
     var view = new Lunchin.Views.SearchResults({collection: matchingBusinesses});

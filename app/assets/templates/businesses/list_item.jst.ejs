@@ -2,7 +2,9 @@
   <img src="<%= business.escape('photo_url') %>" alt="business photo" />
 </div>
 <div class="business-info">
-  <h5><%= business.escape('name') %></h5>
+  <a href="#businesses/<%= business.id %>">
+    <b><%= business.escape('name') %></b>
+  </a>
   <div>
     Rating
   </div>
@@ -11,22 +13,3 @@
     <li>Hours</li>
   </ul>
 </div>
-
-
-<!-- <div class="panel panel-default">
-  <div class="panel-body">
-    <div class="business-photo">
-      <img src="<%= business.escape('photo_url') %>" alt="business photo" />
-    </div>
-    <div class="business-info">
-      <h5><%= business.escape('name') %></h5>
-      <div>
-        Rating
-      </div>
-      <ul>
-        <li><%= business.escape('location') %></li>
-        <li>Hours</li>
-      </ul>
-    </div>
-  </div>
-</div> -->

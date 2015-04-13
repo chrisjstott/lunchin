@@ -5,7 +5,7 @@ Lunchin.Views.SearchResults = Backbone.CompositeView.extend({
     this.listenTo(this.collection, 'add', this.addListing);
     this.listenTo(this.collection, 'sync', this.render);
     this.listenTo(this.collection, 'sync', this.addMap);
-    // this.collection.each(this.addListing.bind(this));
+    this.collection.each(this.addListing.bind(this));
   },
 
   addMap: function() {
@@ -15,6 +15,7 @@ Lunchin.Views.SearchResults = Backbone.CompositeView.extend({
   },
 
   addListing: function(business) {
+    debugger
     var subview = new Lunchin.Views.BusinessListItem({ model: business });
     this.addSubview('.listings', subview);
   },
