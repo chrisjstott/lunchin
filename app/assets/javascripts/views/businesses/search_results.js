@@ -15,7 +15,6 @@ Lunchin.Views.SearchResults = Backbone.CompositeView.extend({
   },
 
   addListing: function(business) {
-    debugger
     var subview = new Lunchin.Views.BusinessListItem({ model: business });
     this.addSubview('.listings', subview);
   },

@@ -38,6 +38,7 @@ gem 'binding_of_caller'
 gem 'newrelic_rpm'
 gem 'backbone-on-rails'
 gem 'geocoder'
+gem 'sprockets_better_errors'
 # Use unicorn as the app server
 # gem 'unicorn'
 
