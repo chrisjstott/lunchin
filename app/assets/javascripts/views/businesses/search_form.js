@@ -1,7 +1,7 @@
 Lunchin.Views.SearchForm = Backbone.View.extend({
   events: {'submit form.search-bar': 'submit'},
 
-  template: JST['search/form'],
+  template: JST['businesses/search_form'],
 
   render: function() {
     this.$el.html(this.template);
