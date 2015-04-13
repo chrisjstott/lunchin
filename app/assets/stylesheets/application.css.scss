@@ -39,11 +39,11 @@
   height: auto;
   border-top: 1px lightgray solid;
   padding: 15px;
-  margin: 15px;
+  width: 490px
 }
 
 .search-input {
-  width: 800px;
+  width: 400px;
 }
 
 .business-list-item > * {
@@ -74,15 +74,27 @@ ul {
 }
 
 .map {
-  float: left;
+  float: right;
+  margin: 15px
 }
 
 .results {
   float: left;
+  margin: 15px
 }
 
 #map-canvas {
-  border: 2px firebrick solid;
-  height: 400px;
-  width: 400px;
+  border: 1px gray solid;
+  height: 350px;
+  width: 350px;
+}
+
+#main {
+  width: 900px;
+  margin: 0 auto;
+}
+
+.navbar-content {
+  width: 900px;
+  margin: 0 auto;
 }

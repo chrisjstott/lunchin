@@ -9,7 +9,7 @@ Lunchin.Views.SearchResults = Backbone.CompositeView.extend({
   },
 
   addMap: function() {
-    var subview = new Lunchin.Views.MapShow();
+    var subview = new Lunchin.Views.MapShow({ collection: this.collection });
     this.addSubview('.map', subview);
     subview.initMap();
   },
