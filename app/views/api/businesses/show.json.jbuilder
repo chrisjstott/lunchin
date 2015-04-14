@@ -1,4 +1,3 @@
-json.(@business, :id, :name, :owner_id)
+json.(@business, :id, :name, :owner_id, :location)
 
-# json.reviews @business.reviews do |review|
-# end
+json.reviews @business.reviews, :rating, :body, :author_id

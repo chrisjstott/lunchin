@@ -37,6 +37,7 @@ Lunchin.Views.MapShow = Backbone.View.extend({
     });
 
     google.maps.event.addListener(marker, 'mouseover', function (event) {
+      // change this?
       view.showMarkerInfo(event, marker);
     });
 

@@ -18,7 +18,7 @@ class Business < ActiveRecord::Base
 validates :name, :location, presence: true
 
 belongs_to :owner, class_name: "User"
-has_many: :reviews
+has_many :reviews
 
 geocoded_by :location
 after_validation :geocode
