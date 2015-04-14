@@ -1,7 +1,10 @@
 Lunchin.Collections.SearchResults = Backbone.Collection.extend({
-  initialize: function (options) {
-    this.url = options.url;
+  model: Lunchin.Models.Business,
+  url: function() {
+    return 'api/businesses?search=' + this.query;
   },
 
-  model: Lunchin.Models.Business
+  initialize: function (models, options) {
+    this.query = options.query;
+  }
 });

@@ -31,7 +31,8 @@ Lunchin.Views.MapShow = Backbone.View.extend({
     var view = this;
 
     var marker = new google.maps.Marker({
-      position: { lat: business.get('latitude'), lng: business.get('longitude') },
+      position: { lat: business.get('latitude'),
+                  lng: business.get('longitude') },
       map: this._map,
       business: business
     });
@@ -51,12 +52,9 @@ Lunchin.Views.MapShow = Backbone.View.extend({
   },
 
   showMarkerInfo: function (event, marker) {
+    var content = JST['businesses/map_popup']({ business: marker.business });
 
-    var info = JST['businesses/map_popup']({ business: marker.business });
-
-    var infoWindow = new google.maps.InfoWindow({
-      content: info
-    });
+    var infoWindow = new google.maps.InfoWindow({ content: content });
 
     infoWindow.open(this._map, marker);
 

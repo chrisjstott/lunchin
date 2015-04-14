@@ -2,8 +2,9 @@ Lunchin.Views.BusinessShow = Backbone.CompositeView.extend({
   template: JST['businesses/show'],
 
   initialize: function() {
-    this.listenTo(this.model, 'sync', this.render)
-    this.model.reviews().each(this.addReview.bind(this));
+    this.collection = this.model.reviews();
+    this.listenTo(this.model, 'sync', this.render);
+    this.listenTo(this.collection, 'sync add', this.addReview);
   },
 
   addReview: function(review) {
@@ -14,11 +15,7 @@ Lunchin.Views.BusinessShow = Backbone.CompositeView.extend({
   render: function() {
     var content = this.template({ business: this.model });
     this.$el.html(content);
+    this.attachSubviews();
     return this;
   }
 });
-
-// addListing: function(business) {
-//   var subview = new Lunchin.Views.BusinessListItem({ model: business });
-//   this.addSubview('.listings', subview);
-// },
