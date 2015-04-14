@@ -1,1 +1,2 @@
 how to not show a validation error (only want to show zip code error, not location)
+phantom reviews on business search (because url of collection shows up as member of collection)

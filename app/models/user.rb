@@ -24,6 +24,7 @@ class User < ActiveRecord::Base
   validates :zip_code, length: { is: 5, message: "is invalid" }
 
   has_many :businesses, foreign_key: :owner_id
+  has_many :reviews, foreign_key: :author_id
 
   attr_reader :password, :zip_code
 
