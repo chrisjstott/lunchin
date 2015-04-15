@@ -100,19 +100,14 @@ ul {
   margin: 0 auto;
 }
 
+.rating-hover {
+  background-color: firebrick;
+}
+
+.rating-selected {
+  background-color: firebrick;
+}
+
 .rating-radio-button {
-  position:absolute;
-  top:-20px;
-}
-
-.rating-selector {
-  font-size: 50px;
-}
-
-.rating-selector:hover {
-  color: red;
-}
-
-.rating-radio-button:checked+span {
-  color: red;
+  display: none;
 }
