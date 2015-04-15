@@ -1,3 +1,5 @@
 <h1><%= business.escape('name') %></h1>
-<h2><%= business.escape('location') %></h2>
+<img
+  src="https://maps.googleapis.com/maps/api/staticmap?size=300x150&markers=<%= business.escape('location') %>"/>
+<p><%= business.escape('location') %></p>
 <ul class="reviews"></ul>
