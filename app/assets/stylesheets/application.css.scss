@@ -10,9 +10,9 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+
+$brand-primary: #b22222;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -110,4 +110,17 @@ ul {
 
 .rating-radio-button {
   display: none;
+}
+
+.btn-rating-selector {
+  font-size: 20px;
+  padding: 2px 6px 0px 6px;
+}
+
+.business-name {
+  float: left;
+}
+
+.review-button {
+  float: right;
 }
