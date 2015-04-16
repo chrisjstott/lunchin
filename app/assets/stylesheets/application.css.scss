@@ -123,4 +123,23 @@ ul {
 
 .review-button {
   float: right;
+  margin: 20px 100px;
+}
+
+.info-and-photos > * {
+  float: left;
+}
+
+.map-and-info {
+  padding: 5px;
+  border: 1px solid gray;
+  height: 270px;
+}
+
+.food-photos {
+  margin-top: 35px;
+}
+
+.food-photos * {
+  float: left;
 }

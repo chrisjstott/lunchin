@@ -1,10 +1,19 @@
 <div class="group">
   <h1 class="business-name"><%= business.escape('name') %></h1>
-  <button type="button" class="btn-lg btn-primary review-button">Review</button>
+  <button type="button" class="btn-lg btn-primary review-button">Write a Review</button>
 </div>
 
+<div class="info-and-photos group">
+  <div class="map-and-info">
+    <img
+      src="https://maps.googleapis.com/maps/api/staticmap?size=275x200&markers=<%= business.escape('location') %>&style=feature:poi|element:labels|visibility:off"/>
+    <p><b><%= business.escape('location') %></b></p>
+  </div>
+  <div class="food-photos">
+    <img src="http://lorempixel.com/200/200/food/?1" alt="" />
+    <img src="http://lorempixel.com/200/200/food/?2" alt="" />
+    <img src="http://lorempixel.com/200/200/food/?3" alt="" />
+  </div>
+</div>
 
-<img
-  src="https://maps.googleapis.com/maps/api/staticmap?size=300x200&markers=<%= business.escape('location') %>&style=feature:poi|element:labels|visibility:off"/>
-<p><%= business.escape('location') %></p>
 <ul class="reviews"></ul>
