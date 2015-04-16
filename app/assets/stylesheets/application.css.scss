@@ -13,12 +13,17 @@
  */
 
 $brand-primary: #b22222;
+$brand-danger: #8A0F01;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
 .btn-search {
-  background-color: darkred;
+  background-color: #8A0F01;
+}
+
+.btn-search:hover {
+  background: darken(#8A0F01, 5%);
 }
 
 .glyphicon-search {
@@ -30,7 +35,7 @@ $brand-primary: #b22222;
 }
 
 .navbar {
-  background-color: firebrick;
+  background-color: $brand-primary;
   height: auto;
   padding: 10px;
 }
@@ -39,7 +44,7 @@ $brand-primary: #b22222;
   height: auto;
   border-top: 1px lightgray solid;
   padding: 15px;
-  width: 490px
+  width: 490px;
 }
 
 .search-input {
@@ -75,12 +80,12 @@ ul {
 
 .map {
   float: right;
-  margin: 15px
+  margin: 15px;
 }
 
 .results {
   float: left;
-  margin: 15px
+  margin: 15px;
 }
 
 #map-canvas {
@@ -101,14 +106,14 @@ ul {
 }
 
 .rating-hover {
-  background-color: firebrick;
+  background-color: $brand-primary;
 }
 
 .rating-selected {
-  background-color: firebrick;
+  background-color: $brand-primary;
 }
 
-.rating-radio-button {
+.hidden {
   display: none;
 }
 
