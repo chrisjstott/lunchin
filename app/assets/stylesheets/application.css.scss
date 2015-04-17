@@ -18,11 +18,11 @@ $brand-danger: #8A0F01;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.btn-search {
+.search-bar .btn {
   background-color: #8A0F01;
 }
 
-.btn-search:hover {
+.search-bar .btn:hover {
   background: darken(#8A0F01, 5%);
 }
 
@@ -156,4 +156,9 @@ ul {
 
 .rating-image {
   margin-bottom: 15px;
+}
+
+.btn-login {
+  float: right;
+  margin: 20px;
 }
