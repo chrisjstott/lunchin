@@ -3,7 +3,7 @@ Lunchin.Routers.Router = Backbone.Router.extend({
   initialize: function() {
     this.businesses = new Lunchin.Collections.Businesses;
     this.searchBar = new Lunchin.Views.SearchForm;
-    $('nav').html(this.searchBar.render().$el);
+    // $('nav').html(this.searchBar.render().$el);
     this.$rootEl = $('#main');
   },
 
