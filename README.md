@@ -2,7 +2,7 @@
 
 [Heroku link][heroku]
 
-[heroku]:
+[heroku]:http://lunchin.herokuapp.com
 
 ## Minimum Viable Product
 Lunchin' is a Yelp clone optimized for food trucks.
