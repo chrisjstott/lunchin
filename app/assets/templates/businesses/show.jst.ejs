@@ -1,7 +1,14 @@
-<nav class="navbar navbar-default"></nav>
+<nav class="header"></nav>
 
 <div class="group">
-  <h1 class="business-name"><%= business.escape('name') %></h1>
+
+  <div class="name-rating">
+    <h1 class="business-name"><%= business.escape('name') %></h1>
+    <img src="/assets/<%= business.escape('average_rating') %>stars.png"
+         alt="<%= business.escape('average_rating') %> stars"
+         class="rating-image"/>
+  </div>
+
   <button type="button" class="btn-lg btn-primary review-button">Write a Review</button>
 </div>
 

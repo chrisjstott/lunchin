@@ -16,7 +16,7 @@ Lunchin.Views.BusinessShow = Backbone.CompositeView.extend({
 
   addSearch: function() {
     var subview = new Lunchin.Views.SearchForm();
-    this.addSubview('.navbar', subview);
+    this.addSubview('.header', subview);
   },
 
   addReviews: function() {

@@ -32,12 +32,14 @@ $brand-danger: #8A0F01;
 
 .logo {
   color: white;
+  margin: 5px 10px;
 }
 
-.navbar {
+.header {
   background-color: $brand-primary;
   height: auto;
   padding: 10px;
+  border-radius: 0px 0px 5px 5px;
 }
 
 .business-list-item {
@@ -45,10 +47,6 @@ $brand-danger: #8A0F01;
   border-top: 1px lightgray solid;
   padding: 15px;
   width: 490px;
-}
-
-.search-input {
-  width: 400px;
 }
 
 .business-list-item > * {
@@ -100,11 +98,6 @@ ul {
   margin: 0 auto;
 }
 
-.navbar-content {
-  width: 900px;
-  margin: 0 auto;
-}
-
 .rating-hover {
   background-color: $brand-primary;
 }
@@ -122,7 +115,7 @@ ul {
   padding: 2px 6px 0px 6px;
 }
 
-.business-name {
+.name-rating {
   float: left;
 }
 
@@ -159,4 +152,8 @@ ul {
 
 .review-form-body label {
   vertical-align: top;
+}
+
+.rating-image {
+  margin-bottom: 15px;
 }

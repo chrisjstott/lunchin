@@ -15,6 +15,7 @@ module Api
     def show
       @business = Business.find(params[:id])
       if @business
+        @average_rating = @business.reviews.average(:rating)
         render :show
       else
         render json: "Page not found", status: 404
