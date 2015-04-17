@@ -15,7 +15,6 @@ Lunchin.Views.BusinessShow = Backbone.CompositeView.extend({
   },
 
   addSearch: function() {
-
     var subview = new Lunchin.Views.SearchForm();
     this.addSubview('.navbar', subview);
   },
@@ -25,7 +24,6 @@ Lunchin.Views.BusinessShow = Backbone.CompositeView.extend({
   },
 
   addReview: function(review) {
-
     var subview = new Lunchin.Views.Review({ model: review });
     this.addSubview('.reviews', subview);
   },
@@ -39,7 +37,6 @@ Lunchin.Views.BusinessShow = Backbone.CompositeView.extend({
   },
 
   render: function() {
-
     var content = this.template({ business: this.model });
     this.$el.html(content);
     this.attachSubviews();
