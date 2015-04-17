@@ -9,12 +9,20 @@ Lunchin.Views.ReviewForm = Backbone.View.extend({
   },
 
   render: function() {
-    this.$el.html(this.template);
+    var content = this.template({ business: this.model });
+    this.$el.html(content);
     return this;
   },
 
   submit: function(event) {
     event.preventDefault();
+    var attrs = $(event.currentTarget).serializeJSON();
+    this.model.reviews().create({
+      business_id: this.model.id,
+      rating: attrs.rating,
+      body: attrs.body
+    }, {wait: true});
+    Backbone.history.navigate('businesses/' + this.model.id, {trigger: true});
   },
 
   selectRating: function(event) {

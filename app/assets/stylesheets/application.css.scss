@@ -113,7 +113,7 @@ ul {
   background-color: $brand-primary;
 }
 
-.hidden {
+.rating-radio-button {
   display: none;
 }
 
@@ -147,4 +147,16 @@ ul {
 
 .food-photos * {
   float: left;
+}
+
+.review-form-rating {
+  margin-bottom: 30px;
+}
+
+.review-form-label {
+  width: 150px;
+}
+
+.review-form-body label {
+  vertical-align: top;
 }

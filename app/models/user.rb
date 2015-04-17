@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
   validates :first_name, :last_name, :location, :password_digest, presence: true
   validates :email, :session_token, presence: true, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
-  validates :zip_code, length: { is: 5, message: "is invalid" }
+  validates :zip_code, length: { is: 5, allow_nil: true, message: "is invalid" }
 
   has_many :businesses, foreign_key: :owner_id
   has_many :reviews, foreign_key: :author_id
@@ -54,7 +54,7 @@ class User < ActiveRecord::Base
 
   def reset_session_token!
     self.session_token = User.generate_session_token
-    self.save
+    self.save!
     self.session_token
   end
 
