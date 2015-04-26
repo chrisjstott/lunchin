@@ -18,11 +18,19 @@ $brand-danger: #8A0F01;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.search-bar .btn {
+.btn-login {
   background-color: #8A0F01;
 }
 
-.search-bar .btn:hover {
+.btn-login:hover {
+  background: darken(#8A0F01, 5%);
+}
+
+.btn-search {
+  background-color: #8A0F01;
+}
+
+.btn-search:hover {
   background: darken(#8A0F01, 5%);
 }
 
@@ -162,3 +170,16 @@ ul {
   float: right;
   margin: 20px;
 }
+
+.big-search {
+  background-color: $brand-primary;
+  width: 650px;
+  margin: 250px auto 0 auto;
+  height: auto;
+  padding: 16px;
+  border-radius: 5px;
+}
+
+.big-search .btn {
+  float: right;
+  }
