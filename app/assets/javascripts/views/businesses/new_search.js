@@ -18,7 +18,7 @@ Lunchin.Views.NewSearch = Backbone.CompositeView.extend ({
     this.attachSubviews();
     return this;
   },
-  
+
   submit: function(event) {
     event.preventDefault();
     var searchQuery = $(event.target).serializeJSON().query;

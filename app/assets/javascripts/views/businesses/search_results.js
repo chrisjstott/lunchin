@@ -3,6 +3,7 @@ Lunchin.Views.SearchResults = Backbone.CompositeView.extend({
 
   initialize: function() {
     this.listenTo(this.collection, 'sync', this.addListings);
+    this.listenTo(this.collection, 'sync', this.addMap)
 
     this.addSearch();
   },
@@ -31,7 +32,7 @@ Lunchin.Views.SearchResults = Backbone.CompositeView.extend({
   render: function() {
     var content = this.template();
     this.$el.html(content);
-    this.addMap();
+    // this.addMap();
     this.attachSubviews();
     return this;
   }

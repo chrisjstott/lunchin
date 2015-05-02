@@ -174,7 +174,7 @@ ul {
 .big-search {
   background-color: $brand-primary;
   width: 650px;
-  margin: 250px auto 0 auto;
+  margin: 0 auto;
   height: auto;
   padding: 16px;
   border-radius: 5px;
@@ -183,3 +183,9 @@ ul {
 .big-search .btn {
   float: right;
   }
+
+.big-logo {
+  margin: 20px auto;
+  display: block;
+  width: 500px
+}

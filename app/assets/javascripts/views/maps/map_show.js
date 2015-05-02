@@ -8,6 +8,7 @@ Lunchin.Views.MapShow = Backbone.View.extend({
 
     this.listenTo(this.collection, 'add', this.addMarker);
     this.listenTo(this.collection, 'add', this.removeMarker);
+    this.infoWindow;
   },
 
   initMap: function () {
@@ -37,9 +38,8 @@ Lunchin.Views.MapShow = Backbone.View.extend({
       business: business
     });
 
-    google.maps.event.addListener(marker, 'mouseover', function (event) {
-      // change this?
-      view.showMarkerInfo(event, marker);
+    google.maps.event.addListener(marker, 'click', function() {
+      view.showMarkerInfo(marker)
     });
 
     this._markers[business.id] = marker;
@@ -51,15 +51,13 @@ Lunchin.Views.MapShow = Backbone.View.extend({
     delete this._markers[business.id];
   },
 
-  showMarkerInfo: function (event, marker) {
+  showMarkerInfo: function (marker) {
+    if (this.infoWindow) {
+      this.infoWindow.close();
+    };
+
     var content = JST['businesses/map_popup']({ business: marker.business });
-
-    var infoWindow = new google.maps.InfoWindow({ content: content });
-
-    infoWindow.open(this._map, marker);
-
-    google.maps.event.addListener(marker, 'mouseout', function (event) {
-      infoWindow.close();
-    });
+    this.infoWindow = new google.maps.InfoWindow({ content: content });
+    this.infoWindow.open(this._map, marker);
   }
 });
