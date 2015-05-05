@@ -3,17 +3,20 @@ Lunchin.Views.MapShow = Backbone.View.extend({
     id: 'map-canvas'
   },
 
-  initialize: function () {
+  initialize: function (options) {
     this._markers = {};
+    this.location = options.location
+    this.geocoder = new google.maps.Geocoder();
 
     this.listenTo(this.collection, 'add', this.addMarker);
     this.listenTo(this.collection, 'add', this.removeMarker);
     this.infoWindow;
   },
 
-  initMap: function () {
+
+  initMap: function (latLng) {
     var mapOptions = {
-      center: { lat: 37.7833, lng: -122.4167 },
+      center: { lat: 37.7577, lng: -122.4376 },
       zoom: 15,
       styles: [{
         "featureType": "poi",
@@ -23,6 +26,14 @@ Lunchin.Views.MapShow = Backbone.View.extend({
     };
 
     this._map = new google.maps.Map(this.el, mapOptions);
+
+    var map = this._map;
+
+    this.geocoder.geocode( { 'address': this.location + ', San Francisco' }, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        map.setCenter(results[0].geometry.location);
+      }
+    });
 
     this.collection.each(this.addMarker.bind(this));
   },

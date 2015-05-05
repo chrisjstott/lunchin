@@ -42,7 +42,10 @@ Lunchin.Routers.Router = Backbone.Router.extend({
       query: query
     });
     matchingBusinesses.fetch();
-    var view = new Lunchin.Views.SearchResults({collection: matchingBusinesses});
+    var view = new Lunchin.Views.SearchResults({
+      collection: matchingBusinesses,
+      location: query
+    });
     this._swapView(view);
   },
 

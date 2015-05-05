@@ -1,20 +1,25 @@
 Lunchin.Views.SearchResults = Backbone.CompositeView.extend({
   template: JST['businesses/search_results'],
 
-  initialize: function() {
+  initialize: function(options) {
+    this.location = options.location;
+
     this.listenTo(this.collection, 'sync', this.addListings);
-    this.listenTo(this.collection, 'sync', this.addMap)
+    this.listenTo(this.collection, 'sync', this.addMap);
 
     this.addSearch();
   },
 
   addSearch: function() {
-    var subview = new Lunchin.Views.SearchForm();
+    var subview = new Lunchin.Views.SearchForm({input: this.location});
     this.addSubview('.header', subview);
   },
 
   addMap: function() {
-    var subview = new Lunchin.Views.MapShow({ collection: this.collection });
+    var subview = new Lunchin.Views.MapShow({
+      collection: this.collection,
+      location: this.location
+    });
     this.addSubview('.map', subview);
     subview.initMap();
   },
@@ -27,7 +32,6 @@ Lunchin.Views.SearchResults = Backbone.CompositeView.extend({
   addListings: function() {
     this.collection.each(this.addListing.bind(this));
   },
-
 
   render: function() {
     var content = this.template();
