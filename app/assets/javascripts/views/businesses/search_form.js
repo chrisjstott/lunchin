@@ -3,12 +3,16 @@ Lunchin.Views.SearchForm = Backbone.View.extend({
 
   template: JST['businesses/search_form'],
 
-  intitialize: function(options) {
-    this.input = options.input
-  }
+  initialize: function(options) {
+    if(options.input) {
+      this.input = options.input;
+    } else {
+      this.input = '';
+    }
+  },
 
   render: function() {
-    var content = this.template({input: this.input})
+    var content = this.template({input: this.input});
     this.$el.html(content);
     return this;
   },
