@@ -36,7 +36,6 @@ Lunchin.Views.SearchResults = Backbone.CompositeView.extend({
   render: function() {
     var content = this.template();
     this.$el.html(content);
-    // this.addMap();
     this.attachSubviews();
     return this;
   }
