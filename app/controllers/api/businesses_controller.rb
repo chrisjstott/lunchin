@@ -27,10 +27,11 @@ module Api
         search_query = params[:search]
         @businesses = Business.near("%#{search_query}%")
       else
+        fail
         @businesses = Business.all
       end
 
-      render json: @businesses
+      render :index
     end
 
     private

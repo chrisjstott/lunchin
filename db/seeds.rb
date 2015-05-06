@@ -26,11 +26,11 @@ koz.save
 businesses = Business.create([
   { name: "Koz's Kitchen",
     location: "UN Plaza, McAllister St, San Francisco",
-    owner_id: koz.id
+    owner_id: koz.id, photo_url: 'assets/kozskitchen.jpg'
   },
-  { name: 'Senor Sisig', location: "1061 Market St, San Francisco" },
-  { name: 'Bacon Bacon', location: "135 Polk St, San Francisco" },
-  { name: 'KoJa Kitchen', location: "110 5th St, San Francisco" },
-  { name: 'The Chairman', location: "Civic Center Plaza, San Francisco" },
-  { name: 'RoliRoti', location: "Ferry Building, San Francisco" },
-  { name: 'Seoul on Wheels', location: "60 Leavenworth St, San Francisco" } ])
+  { name: 'Senor Sisig', location: "1061 Market St, San Francisco", photo_url: 'assets/senorsisig.jpg' },
+  { name: 'Bacon Bacon', location: "135 Polk St, San Francisco", photo_url: 'assets/baconbacon.jpg' },
+  { name: 'KoJa Kitchen', location: "110 5th St, San Francisco", photo_url: 'assets/kojakitchen.jpg' },
+  { name: 'The Chairman', location: "Civic Center Plaza, San Francisco", photo_url: 'assets/thechairman.jpg' },
+  { name: 'RoliRoti', location: "Ferry Building, San Francisco", photo_url: 'assets/roliroti.jpg' },
+  { name: 'Seoul on Wheels', location: "60 Leavenworth St, San Francisco", photo_url: 'assets/seoulonwheels.jpg' } ])

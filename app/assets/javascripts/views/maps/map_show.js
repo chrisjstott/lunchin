@@ -29,7 +29,7 @@ Lunchin.Views.MapShow = Backbone.View.extend({
 
     var map = this._map;
 
-    this.geocoder.geocode( { 'address': this.location + ', San Francisco' }, function(results, status) {
+    this.geocoder.geocode( { 'address': this.location }, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
         map.setCenter(results[0].geometry.location);
       }

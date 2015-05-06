@@ -1,15 +1,14 @@
-<div class="business-photo">
-  <img src="<%= business.escape('photo_url') %>" alt="business photo" />
+<div class="business-photo" style="background-image: url(<%= business.escape('photo_url') %>)">
 </div>
 <div class="business-info">
   <a href="#businesses/<%= business.id %>">
     <b><%= business.escape('name') %></b>
   </a>
-  <div>
-    Rating
-  </div>
+  <img src="/assets/<%= business.escape('average_rating') %>stars.png"
+       alt="<%= business.escape('average_rating') %> stars"
+       class="small-rating-image"/>
   <ul>
     <li><%= business.escape('location') %></li>
-    <li>Hours</li>
+    <li><%= business.escape('distance') %> miles away</li>
   </ul>
 </div>

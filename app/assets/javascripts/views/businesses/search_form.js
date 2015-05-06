@@ -19,11 +19,7 @@ Lunchin.Views.SearchForm = Backbone.View.extend({
 
   submit: function(event) {
     event.preventDefault();
-    var searchQuery = $(event.target).serializeJSON().query;
-    if (searchQuery) {
-      Backbone.history.navigate('search/' + searchQuery, {trigger: true});
-    } else {
-      Backbone.history.navigate('businesses/all', {trigger: true});
-    }
+    var searchQuery = $(event.target).serializeJSON().query + ', San Francisco';
+    Backbone.history.navigate('search/' + searchQuery, {trigger: true});
   }
 });
