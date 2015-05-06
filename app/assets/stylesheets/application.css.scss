@@ -199,3 +199,17 @@ ul {
   height: auto;
   display: block;
 }
+
+.login-bg {
+  width: 500px;
+  height: 255px;
+  margin: 0 auto;
+  background-image: url("logo-r.png");
+  background-size: contain;
+  padding: 50px 206px 0 90px;
+  color: #b22222;
+}
+
+.session-header {
+  text-align: center;
+}
