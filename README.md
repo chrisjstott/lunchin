@@ -8,12 +8,12 @@
 Lunchin' is a Yelp clone optimized for food trucks.
 
 Users can
-- [ ] See what food trucks are near them
-- [ ] Search
-- [ ] Create accounts
-- [ ] Log in
-- [ ] Give ratings/reviews
-- [ ] Read reviews
+- [X] See what food trucks are near them
+- [X] Search
+- [X] Create accounts
+- [X] Log in
+- [X] Give ratings/reviews
+- [X] Read reviews
 
 Business Owners can
 - [ ] Update their location
