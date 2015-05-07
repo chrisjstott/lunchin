@@ -4,7 +4,7 @@
   <a href="#businesses/<%= business.id %>">
     <b><%= business.escape('name') %></b>
   </a>
-  <img src="/assets/<%= business.escape('average_rating') %>stars.png"
+  <img src="https://s3-us-west-1.amazonaws.com/lunchin/assets/<%= business.escape('average_rating') %>stars.png"
        alt="<%= business.escape('average_rating') %> stars"
        class="small-rating-image"/>
   <ul>
