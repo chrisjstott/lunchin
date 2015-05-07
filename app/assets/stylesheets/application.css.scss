@@ -195,7 +195,7 @@ ul {
 }
 
 .small-rating-image {
-  width: 100px;
+  width: 120px;
   height: auto;
   display: block;
 }
@@ -220,4 +220,23 @@ ul {
   border-radius: 5px;
   border: 1px solid gray;
   margin: 0 5px 0 15px;
+}
+
+.review-author-info {
+  float: left;
+  margin-right: 15px;
+}
+
+.review-rating-body {
+  float: left;
+}
+
+.reviews > li {
+  margin: 15px;
+  border-top: 1px solid gray;
+  padding: 15px;
+}
+
+.reviews {
+  margin-top: 40px;
 }

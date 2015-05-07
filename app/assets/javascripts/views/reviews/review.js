@@ -1,6 +1,6 @@
 Lunchin.Views.Review = Backbone.View.extend({
   template: JST['reviews/show'],
-  tagName: 'li',
+  tagName: 'div',
 
   render: function() {
     var content = this.template({ review: this.model });

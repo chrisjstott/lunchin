@@ -15,8 +15,8 @@
 <div class="info-and-photos group">
   <div class="map-and-info">
     <img
-      src="https://maps.googleapis.com/maps/api/staticmap?size=275x200&markers=<%= business.escape('location') %>&style=feature:poi|element:labels|visibility:off"/>
-    <p><b><%= business.escape('location') %></b></p>
+      src="https://maps.googleapis.com/maps/api/staticmap?size=275x240&markers=<%= business.escape('location') %>&style=feature:poi|element:labels|visibility:off"/>
+    <p style="text-align:center;"><b><%= business.escape('location') %></b></p>
   </div>
   <div class="food-photos">
     <img src="http://lorempixel.com/200/200/food/?1" alt="" />
@@ -25,4 +25,27 @@
   </div>
 </div>
 
-<ul class="reviews"></ul>
+<ul class="reviews">
+  <% business.reviews().forEach( function(review) { %>
+    <li class="group">
+      <ul class="review-author-info">
+        <li>
+          <img src="
+            <% if (review.get('author'.photo_url)) {%>
+              <%= review.get('author').photo_url %>
+            <% } else { %>
+              <%= 'assets/user_60_square.png' %>
+            <% } %>
+          " >
+        </li>
+        <li><%= review.get('author').first_name %></li>
+      </ul>
+
+      <div class="review-rating-body">
+        <img class="small-rating-image" src="assets/<%= review.escape('rating') %>stars.png">
+        <br>
+        <%= review.escape('body') %>
+      </div>
+    </li>
+  <% }); %>
+</ul>
