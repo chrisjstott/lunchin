@@ -6,7 +6,7 @@ Lunchin.Views.SearchResults = Backbone.CompositeView.extend({
 
     this.listenTo(this.collection, 'sync', this.addListings);
     this.listenTo(this.collection, 'sync', this.addMap);
-    this.listenTo(this.collection, 'sync', this.render)
+    this.listenTo(this.collection, 'sync', this.render);
 
     this.addSearch();
   },

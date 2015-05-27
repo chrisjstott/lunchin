@@ -2,7 +2,7 @@ Lunchin.Views.BusinessShow = Backbone.CompositeView.extend({
   template: JST['businesses/show'],
 
   events: {
-    'click button.review-button': 'writeReview'
+    'click a.review-button': 'clickReview'
   },
 
   initialize: function() {
@@ -28,12 +28,14 @@ Lunchin.Views.BusinessShow = Backbone.CompositeView.extend({
     this.addSubview('.reviews', subview);
   },
 
-  writeReview: function(event) {
-    event.preventDefault();
-    Backbone.history.navigate(
-      "businesses/" + this.model.id + "/review",
-      { trigger: true }
-    );
+  clickReview: function(event) {
+    if (!!Lunchin.currentUserId) {
+      event.preventDefault();
+      Backbone.history.navigate(
+        "businesses/" + this.model.id + "/review",
+        { trigger: true }
+      );
+    }
   },
 
   render: function() {

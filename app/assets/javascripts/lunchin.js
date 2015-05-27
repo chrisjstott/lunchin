@@ -3,12 +3,12 @@ window.Lunchin = {
   Collections: {},
   Views: {},
   Routers: {},
-  initialize: function() {
-    new Lunchin.Routers.Router;
+  initialize: function(options) {
+    this.currentUserId = options.currentUserId;
+    new Lunchin.Routers.Router({
+      currentUserId: options.currentUserId
+    });
     Backbone.history.start();
   }
 };
 
-$(document).ready(function(){
-  Lunchin.initialize();
-});

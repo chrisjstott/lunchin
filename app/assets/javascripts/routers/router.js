@@ -1,6 +1,7 @@
 Lunchin.Routers.Router = Backbone.Router.extend({
 
-  initialize: function() {
+  initialize: function(options) {
+    this.currentUserId = options.currentUserId;
     this.businesses = new Lunchin.Collections.Businesses;
     this.$rootEl = $('#main');
   },
