@@ -5,7 +5,11 @@ Lunchin.Views.MapShow = Backbone.View.extend({
 
   initialize: function (options) {
     this._markers = {};
-    this.location = options.location
+    if (options.location.includes(',')) {
+      this.location = options.location;
+    } else {
+      this.location = options.location + ', San Francisco';
+    }
     this.geocoder = new google.maps.Geocoder();
 
     this.listenTo(this.collection, 'add', this.addMarker);

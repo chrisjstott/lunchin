@@ -4,12 +4,6 @@ Lunchin.Views.NewSearch = Backbone.CompositeView.extend ({
   events: {'submit form.search-bar': 'submit'},
 
   initialize: function() {
-    // this.addSearch();
-  },
-
-  addSearch: function() {
-    var subview = new Lunchin.Views.SearchForm({});
-    this.addSubview('.big-search', subview);
   },
 
   render: function() {
@@ -21,7 +15,7 @@ Lunchin.Views.NewSearch = Backbone.CompositeView.extend ({
 
   submit: function(event) {
     event.preventDefault();
-    var searchQuery = $(event.target).serializeJSON().query + ', San Francisco';
+    var searchQuery = $(event.target).serializeJSON().query;
     Backbone.history.navigate('search/' + searchQuery, {trigger: true});
   }
 

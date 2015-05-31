@@ -23,11 +23,13 @@ module Api
     end
 
     def index
-      if params[:search]
-        search_query = params[:search]
-        @businesses = Business.near("%#{search_query}%")
+      if params[:search].include? ','
+        query = params[:search]
+        @businesses = Business.near("#{query}")
+      elsif params[:search]
+        query = "#{params[:search]}, San Francisco"
+        @businesses = Business.near(query)
       else
-        fail
         @businesses = Business.all
       end
 

@@ -10,11 +10,11 @@ Lunchin.Routers.Router = Backbone.Router.extend({
     '': 'newSearch',
     'businesses/:id': 'businessShow',
     'businesses/:id/review': 'reviewForm',
-    'search/:query': 'searchResults'
+    'search/:query': 'searchResults',
   },
 
   newSearch: function() {
-    var view = new Lunchin.Views.NewSearch
+    var view = new Lunchin.Views.NewSearch;
     this._swapView(view);
   },
 
@@ -31,12 +31,12 @@ Lunchin.Routers.Router = Backbone.Router.extend({
   },
 
   searchResults: function(query) {
-    var matchingBusinesses = new Lunchin.Collections.SearchResults([], {
+    var searchResults = new Lunchin.Collections.SearchResults([], {
       query: query
     });
-    matchingBusinesses.fetch();
+    searchResults.fetch();
     var view = new Lunchin.Views.SearchResults({
-      collection: matchingBusinesses,
+      collection: searchResults,
       location: query
     });
     this._swapView(view);
