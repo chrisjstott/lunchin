@@ -1,5 +1,5 @@
 Lunchin.Views.SearchResults = Backbone.CompositeView.extend({
-  template: JST['businesses/search_results'],
+  template: JST['openings/search_results'],
 
   initialize: function(options) {
     this.location = options.location;
@@ -25,8 +25,8 @@ Lunchin.Views.SearchResults = Backbone.CompositeView.extend({
     subview.initMap();
   },
 
-  addListing: function(business) {
-    var subview = new Lunchin.Views.BusinessListItem({ model: business });
+  addListing: function(opening) {
+    var subview = new Lunchin.Views.SearchResult({ model: opening });
     this.addSubview('.listings', subview);
   },
 

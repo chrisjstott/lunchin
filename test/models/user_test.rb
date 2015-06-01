@@ -3,13 +3,13 @@
 # Table name: users
 #
 #  id              :integer          not null, primary key
-#  first_name      :string(255)      not null
-#  last_name       :string(255)      not null
-#  email           :string(255)      not null
-#  password_digest :string(255)      not null
-#  session_token   :string(255)      not null
-#  location        :string(255)      not null
-#  photo_url       :string(255)
+#  first_name      :string           not null
+#  last_name       :string           not null
+#  email           :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  location        :string           not null
+#  photo_url       :string
 #  created_at      :datetime
 #  updated_at      :datetime
 #

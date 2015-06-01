@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resources :businesses, except: [:new, :edit]
     resources :reviews, only: [:create]
+    resources :openings, except: [:new, :edit, :show]
   end
 end

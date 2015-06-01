@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150414163008) do
+ActiveRecord::Schema.define(version: 20150531164858) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "businesses", force: true do |t|
+  create_table "businesses", force: :cascade do |t|
     t.string   "name",       null: false
     t.integer  "owner_id"
     t.datetime "created_at"
@@ -30,7 +30,20 @@ ActiveRecord::Schema.define(version: 20150414163008) do
   add_index "businesses", ["name"], name: "index_businesses_on_name", using: :btree
   add_index "businesses", ["owner_id"], name: "index_businesses_on_owner_id", using: :btree
 
-  create_table "reviews", force: true do |t|
+  create_table "openings", force: :cascade do |t|
+    t.datetime "start_time",  null: false
+    t.datetime "end_time",    null: false
+    t.string   "location"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.integer  "business_id", null: false
+  end
+
+  add_index "openings", ["business_id"], name: "index_openings_on_business_id", using: :btree
+  add_index "openings", ["end_time"], name: "index_openings_on_end_time", using: :btree
+  add_index "openings", ["start_time"], name: "index_openings_on_start_time", using: :btree
+
+  create_table "reviews", force: :cascade do |t|
     t.integer  "rating",      null: false
     t.string   "body",        null: false
     t.integer  "author_id",   null: false
@@ -42,7 +55,7 @@ ActiveRecord::Schema.define(version: 20150414163008) do
   add_index "reviews", ["author_id"], name: "index_reviews_on_author_id", using: :btree
   add_index "reviews", ["business_id", "author_id"], name: "index_reviews_on_business_id_and_author_id", using: :btree
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "first_name",      null: false
     t.string   "last_name",       null: false
     t.string   "email",           null: false

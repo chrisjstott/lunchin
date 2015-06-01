@@ -3,6 +3,7 @@ Lunchin.Views.ReviewForm = Backbone.CompositeView.extend({
 
   initialize: function() {
     this.addSearch();
+    this.listenTo(this.model, 'sync', this.render);
   },
 
   events: {

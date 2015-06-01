@@ -4,7 +4,7 @@
 #
 #  id          :integer          not null, primary key
 #  rating      :integer          not null
-#  body        :string(255)      not null
+#  body        :string           not null
 #  author_id   :integer          not null
 #  business_id :integer          not null
 #  created_at  :datetime

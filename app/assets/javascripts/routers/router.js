@@ -31,12 +31,12 @@ Lunchin.Routers.Router = Backbone.Router.extend({
   },
 
   searchResults: function(query) {
-    var searchResults = new Lunchin.Collections.SearchResults([], {
+    var openings = new Lunchin.Collections.Openings([], {
       query: query
     });
-    searchResults.fetch();
+    openings.fetch();
     var view = new Lunchin.Views.SearchResults({
-      collection: searchResults,
+      collection: openings,
       location: query
     });
     this._swapView(view);
