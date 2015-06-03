@@ -42,28 +42,28 @@ Lunchin.Views.MapShow = Backbone.View.extend({
     this.collection.each(this.addMarker.bind(this));
   },
 
-  addMarker: function (business) {
-    if (this._markers[business.id]) { return };
+  addMarker: function (opening) {
+    if (this._markers[opening.id]) { return };
     var view = this;
 
     var marker = new google.maps.Marker({
-      position: { lat: business.get('latitude'),
-                  lng: business.get('longitude') },
+      position: { lat: opening.get('latitude'),
+                  lng: opening.get('longitude') },
       map: this._map,
-      business: business
+      opening: opening
     });
 
     google.maps.event.addListener(marker, 'click', function() {
       view.showMarkerInfo(marker)
     });
 
-    this._markers[business.id] = marker;
+    this._markers[opening.id] = marker;
   },
 
-  removeMarker: function (business) {
-    var marker = this._markers[business.id];
+  removeMarker: function (opening) {
+    var marker = this._markers[opening.id];
     marker.setMap(null);
-    delete this._markers[business.id];
+    delete this._markers[opening.id];
   },
 
   showMarkerInfo: function (marker) {
@@ -71,7 +71,7 @@ Lunchin.Views.MapShow = Backbone.View.extend({
       this.infoWindow.close();
     };
 
-    var content = JST['maps/map_popup']({ business: marker.business });
+    var content = JST['maps/map_popup']({ opening: marker.opening, business: marker.opening.business()});
     this.infoWindow = new google.maps.InfoWindow({ content: content });
     this.infoWindow.open(this._map, marker);
   }
