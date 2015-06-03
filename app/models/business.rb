@@ -15,13 +15,10 @@
 
 class Business < ActiveRecord::Base
 
-validates :name, :location, presence: true
+validates :name, presence: true
 
 belongs_to :owner, class_name: "User"
 has_many :reviews
 has_many :openings
-
-geocoded_by :location
-after_validation :geocode
 
 end
