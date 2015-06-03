@@ -1,6 +1,9 @@
-<div class="business-photo" style="background-image: url(<%= business.escape('photo_url') %>)">
+<div class="col-md-2">
+  <div class="business-photo" style="background-image: url(<%= business.escape('photo_url') %>)">
+  </div>
 </div>
-<div class="business-info">
+
+<div class="business-info col-md-9">
   <a href="#businesses/<%= business.id %>">
     <b><%= business.escape('name') %></b>
   </a>

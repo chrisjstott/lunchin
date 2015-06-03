@@ -1,5 +1,6 @@
 Lunchin.Views.SearchResults = Backbone.CompositeView.extend({
   template: JST['search/search_results'],
+  classname: 'row',
 
   initialize: function(options) {
     this.location = options.location;

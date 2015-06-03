@@ -1,7 +1,7 @@
 Lunchin.Views.SearchResult = Backbone.View.extend({
   template: JST['search/search_result'],
-  tagName: 'li',
-  className: 'business-list-item group',
+  tagName: 'div',
+  className: 'business-list-item row',
 
   intitialize: function() {
     this.listenTo(this.model, 'sync', this.render);
