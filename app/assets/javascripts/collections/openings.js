@@ -1,10 +1,11 @@
 Lunchin.Collections.Openings = Backbone.Collection.extend({
   model: Lunchin.Models.Opening,
   url: function() {
-    return 'api/openings?search=' + this.query;
+    return 'api/openings?location=' + this.location + '&&time=' + this.time;
   },
 
   initialize: function (models, options) {
-    this.query = options.query;
+    this.location = options.location;
+    this.time = options.time;
   }
 });

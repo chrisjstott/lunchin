@@ -38,8 +38,10 @@ gem 'binding_of_caller'
 gem 'newrelic_rpm'
 gem 'backbone-on-rails'
 gem 'geocoder'
-# gem 'sprockets_better_errors'
 gem 'rails_12factor'
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.7.14'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

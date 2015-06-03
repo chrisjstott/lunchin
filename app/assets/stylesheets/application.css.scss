@@ -11,12 +11,36 @@
  * file per style scope.
  *
  */
-
 $brand-primary: #b22222;
 $brand-danger: #8A0F01;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import 'bootstrap-datetimepicker';
+
+.btn-login {
+  float: right;
+  margin: 20px;
+}
+
+.big-search {
+  background-color: $brand-primary;
+  width: 650px;
+  margin: 0 auto;
+  height: auto;
+  padding: 16px;
+  border-radius: 5px;
+}
+
+.big-search .btn {
+  float: right;
+  }
+
+.big-logo {
+  margin: 20px auto;
+  display: block;
+  width: 500px
+}
 
 .btn-login {
   background-color: #8A0F01;
@@ -34,20 +58,8 @@ $brand-danger: #8A0F01;
   background: darken(#8A0F01, 5%);
 }
 
-.glyphicon-search {
-  color: white;
-}
-
-.logo {
-  color: white;
-  margin: 5px 10px;
-}
-
-.header {
-  background-color: $brand-primary;
-  height: auto;
-  padding: 10px;
-  border-radius: 0px 0px 5px 5px;
+.business-info {
+  margin-left: 20px;
 }
 
 .business-list-item {
@@ -70,22 +82,42 @@ $brand-danger: #8A0F01;
   border-radius: 5px;
 }
 
-.business-info {
-  margin-left: 20px;
+.glyphicon-search {
+  color: white;
+}
+
+.header {
+  background-color: $brand-primary;
+  height: auto;
+  padding: 10px;
+  border-radius: 0px 0px 5px 5px;
+}
+
+
+.login-bg {
+  width: 500px;
+  height: 255px;
+  margin: 0 auto;
+  background-image: url("https://s3-us-west-1.amazonaws.com/lunchin/assets/logo-r.png");
+  background-size: contain;
+  padding: 50px 206px 0 90px;
+  color: #b22222;
 }
 
 li {
   list-style-type: none;
 }
 
-ul {
-  padding: 0px;
+.logo {
+  color: white;
+  margin: 5px 10px;
 }
 
-.group:after {
-  content: "";
-  display: table;
-  clear: both;
+#map-canvas {
+  border: 1px gray solid;
+  border-radius: 5px;
+  height: 350px;
+  width: 350px;
 }
 
 .map {
@@ -98,16 +130,20 @@ ul {
   margin: 15px;
 }
 
-#map-canvas {
-  border: 1px gray solid;
-  border-radius: 5px;
-  height: 350px;
-  width: 350px;
+.review-form-rating {
+  margin-bottom: 30px;
 }
 
-#main {
-  width: 900px;
-  margin: 0 auto;
+.review-form-label {
+  width: 150px;
+}
+
+.review-form-body label {
+  vertical-align: top;
+}
+
+.rating-image {
+  margin-bottom: 15px;
 }
 
 .rating-hover {
@@ -120,6 +156,43 @@ ul {
 
 .rating-radio-button {
   display: none;
+}
+
+.review-author-info {
+  float: left;
+  margin-right: 15px;
+}
+
+.review-rating-body {
+  float: left;
+}
+
+.reviews > li {
+  margin: 15px;
+  border-top: 1px solid gray;
+  padding: 15px;
+}
+
+.reviews {
+  margin-top: 40px;
+}
+
+.small-rating-image {
+  width: 120px;
+  height: auto;
+  display: block;
+}
+
+.session-header {
+  text-align: center;
+}
+
+.search-bar > * {
+  margin: 20px 0;
+}
+
+ul {
+  padding: 0px;
 }
 
 .btn-rating-selector {
@@ -154,89 +227,9 @@ ul {
   float: left;
 }
 
-.review-form-rating {
-  margin-bottom: 30px;
-}
 
-.review-form-label {
-  width: 150px;
-}
-
-.review-form-body label {
-  vertical-align: top;
-}
-
-.rating-image {
-  margin-bottom: 15px;
-}
-
-.btn-login {
-  float: right;
-  margin: 20px;
-}
-
-.big-search {
-  background-color: $brand-primary;
-  width: 650px;
-  margin: 0 auto;
-  height: auto;
-  padding: 16px;
-  border-radius: 5px;
-}
-
-.big-search .btn {
-  float: right;
-  }
-
-.big-logo {
-  margin: 20px auto;
-  display: block;
-  width: 500px
-}
-
-.small-rating-image {
-  width: 120px;
-  height: auto;
-  display: block;
-}
-
-.login-bg {
-  width: 500px;
-  height: 255px;
-  margin: 0 auto;
-  background-image: url("https://s3-us-west-1.amazonaws.com/lunchin/assets/logo-r.png");
-  background-size: contain;
-  padding: 50px 206px 0 90px;
-  color: #b22222;
-}
-
-.session-header {
-  text-align: center;
-}
-
-.search-input {
-  width: 550px;
-  padding: 6px 12px;
-  border-radius: 5px;
-  border: 1px solid gray;
-  margin: 0 5px 0 15px;
-}
-
-.review-author-info {
-  float: left;
-  margin-right: 15px;
-}
-
-.review-rating-body {
-  float: left;
-}
-
-.reviews > li {
-  margin: 15px;
-  border-top: 1px solid gray;
-  padding: 15px;
-}
-
-.reviews {
-  margin-top: 40px;
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
 }

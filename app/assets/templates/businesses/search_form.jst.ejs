@@ -1,24 +1,47 @@
 
 <div class="header-content">
-  <form class="search-bar form-inline">
+  <div class="row">
+  <div class="col-md-2">
+  <a href="#">
+    <img class="logo" src="https://s3-us-west-1.amazonaws.com/lunchin/assets/logo-wr.png" alt="logo" height="65px" />
+  </a>
+  </div>
+  
+  <form class="search-bar">
 
-    <a href="#">
-      <img class="logo" src="https://s3-us-west-1.amazonaws.com/lunchin/assets/logo-wr.png" alt="logo" height="65px" />
-    </a>
-
+  <div class="col-md-4">
     <input
       type="text"
-      class="search-input"
-      name="query"
+      class="search-input form-control"
+      name="location"
       placeholder="Search for food trucks near..."
       value="<%= input %>"
     >
+  </div>
+  <div class="col-md-4">
+    <input
+      type='text'
+      class='search-input form-control datetimepicker'
+      name='time'
+      placeholder='Open now'
+    >
+  </div>
+    <script type="text/javascript">
+      $(function () {
+        $('.datetimepicker').datetimepicker();
+      });
+    </script>
 
+  <div class="col-md-1">
     <button type="submit" class="btn btn-search" aria-label="Search">
       <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
     </button>
-
-    <a href="session/new" class="btn btn-primary btn-login">Log In</a>
+  </div>
 
   </form>
+  
+  <div class="col-md-1">
+  <a href="session/new" class="btn btn-primary btn-login">Log In</a>
+  </div>
+  </div>
 </div>

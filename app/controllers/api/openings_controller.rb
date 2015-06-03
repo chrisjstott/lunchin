@@ -13,17 +13,22 @@ module Api
     end
 
     def index
-      if !!params[:search]
-        if params[:search].include? ','
-          query = params[:search]
-          @openings = Opening.near("#{query}")
-        else
-          query = "#{params[:search]}, San Francisco"
-          @openings = Opening.near(query)
-        end
+      if !!params[:location]
+        location = params[:location]
+        location += ", San Francisco" unless location.include? ','
       else
-        @openings = Opening.all
+        location = "San Francisco"
       end
+      
+      if params[:time] == 'null' || params[:time] == 'now'
+        time = Time.now
+      elsif !!params[:time]
+        time = Time.at(params[:time].to_i)
+      else
+        time = Time.now
+      end
+
+      @openings = Opening.where("start_time < :time AND end_time > :time", time: time).near(location)
 
       render :index
     end

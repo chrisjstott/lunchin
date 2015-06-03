@@ -24,3 +24,6 @@
 //= require_tree ./routers
 //= require_tree .
 //= require bootstrap
+//= require moment
+//= require bootstrap-datetimepicker
+

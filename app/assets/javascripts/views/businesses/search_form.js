@@ -14,12 +14,21 @@ Lunchin.Views.SearchForm = Backbone.View.extend({
   render: function() {
     var content = this.template({input: this.input});
     this.$el.html(content);
+    $('.datetimepicker').datetimepicker();
     return this;
   },
 
   submit: function(event) {
     event.preventDefault();
-    var searchQuery = $(event.target).serializeJSON().query;
-    Backbone.history.navigate('search/' + searchQuery, {trigger: true});
+    var moment = $('.datetimepicker').data("DateTimePicker").date();
+    var time;
+    if (!!moment) {
+      time = moment.format('X');
+    } else {
+      time = 'now';
+    }
+    
+    var location = $(event.target).serializeJSON().location || 'San Francisco';
+    Backbone.history.navigate('search/' + location + '/' + time, {trigger: true});
   }
 });
