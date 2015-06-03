@@ -15,8 +15,8 @@
 <div class="info-and-photos group">
   <div class="map-and-info">
     <img
-      src="https://maps.googleapis.com/maps/api/staticmap?size=275x240&markers=<%= business.escape('location') %>&style=feature:poi|element:labels|visibility:off"/>
-    <p style="text-align:center;"><b><%= business.escape('location') %></b></p>
+      src="https://maps.googleapis.com/maps/api/staticmap?size=275x240&markers=<%= openings[0].escape('location') %>&style=feature:poi|element:labels|visibility:off"/>
+    <p style="text-align:center;"><b><%= openings[0].escape('location') %></b></p>
   </div>
   <div class="food-photos">
     <img src="http://lorempixel.com/200/200/food/?1" alt="" />

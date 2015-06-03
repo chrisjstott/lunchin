@@ -71,7 +71,7 @@ Lunchin.Views.MapShow = Backbone.View.extend({
       this.infoWindow.close();
     };
 
-    var content = JST['businesses/map_popup']({ business: marker.business });
+    var content = JST['maps/map_popup']({ business: marker.business });
     this.infoWindow = new google.maps.InfoWindow({ content: content });
     this.infoWindow.open(this._map, marker);
   }

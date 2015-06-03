@@ -1,5 +1,5 @@
 Lunchin.Views.SearchResult = Backbone.View.extend({
-  template: JST['openings/search_result'],
+  template: JST['search/search_result'],
   tagName: 'li',
   className: 'business-list-item group',
 

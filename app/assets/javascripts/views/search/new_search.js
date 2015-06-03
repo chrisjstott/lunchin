@@ -1,7 +1,7 @@
 Lunchin.Views.NewSearch = Backbone.CompositeView.extend ({
   template: JST['search/new'],
 
-  events: {'submit form.search-bar': 'submit'},
+  events: {'submit form.big-search-bar': 'submit'},
 
   initialize: function() {
   },
