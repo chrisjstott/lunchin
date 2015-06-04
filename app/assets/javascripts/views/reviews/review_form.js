@@ -2,7 +2,6 @@ Lunchin.Views.ReviewForm = Backbone.CompositeView.extend({
   template: JST['reviews/form'],
 
   initialize: function() {
-    this.addSearch();
     this.listenTo(this.model, 'sync', this.render);
   },
 
@@ -11,11 +10,6 @@ Lunchin.Views.ReviewForm = Backbone.CompositeView.extend({
     'click .btn-rating-selector': 'selectRating',
     'mouseenter .btn-rating-selector': 'hoverRating',
     'mouseleave .btn-rating-selector': 'hoverRating'
-  },
-
-  addSearch: function() {
-    var subview = new Lunchin.Views.SearchForm({ input: this.location });
-    this.addSubview('.header', subview);
   },
 
   render: function() {

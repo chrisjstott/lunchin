@@ -9,12 +9,6 @@ Lunchin.Views.SearchResults = Backbone.CompositeView.extend({
     this.listenTo(this.collection, 'sync', this.addMap);
     this.listenTo(this.collection, 'sync', this.render);
 
-    this.addSearch();
-  },
-
-  addSearch: function() {
-    var subview = new Lunchin.Views.SearchForm({ input: this.location });
-    this.addSubview('.header', subview);
   },
 
   addMap: function() {

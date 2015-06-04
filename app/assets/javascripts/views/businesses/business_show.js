@@ -6,19 +6,11 @@ Lunchin.Views.BusinessShow = Backbone.CompositeView.extend({
   },
 
   initialize: function() {
-
     this.reviews = this.model.reviews();
     this.openings = this.model.openings();
     
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.model, 'sync', this.addReviews);
-
-    this.addSearch();
-  },
-
-  addSearch: function() {
-    var subview = new Lunchin.Views.SearchForm({});
-    this.addSubview('.header', subview);
   },
 
   addReviews: function() {

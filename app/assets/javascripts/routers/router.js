@@ -3,6 +3,7 @@ Lunchin.Routers.Router = Backbone.Router.extend({
   initialize: function(options) {
     this.currentUserId = options.currentUserId;
     this.businesses = new Lunchin.Collections.Businesses;
+    this.$headerEl = $('#header');
     this.$rootEl = $('#main');
   },
 
@@ -16,19 +17,29 @@ Lunchin.Routers.Router = Backbone.Router.extend({
 
   newSearch: function() {
     var view = new Lunchin.Views.NewSearch;
-    this._swapView(view);
+    this._swapView(view, '');
   },
 
   businessShow: function(id) {
     var business = this.businesses.getOrFetch(id);
     var view = new Lunchin.Views.BusinessShow({ model: business });
-    this._swapView(view);
+
+    var header = new Lunchin.Views.SearchForm({
+      input: this.location
+    });
+
+    this._swapView(view, header);
   },
 
   reviewForm: function(id) {
     var business = this.businesses.getOrFetch(id);
     var view = new Lunchin.Views.ReviewForm({ model: business });
-    this._swapView(view);
+    
+    var header = new Lunchin.Views.SearchForm({
+      input: this.location
+    });
+
+    this._swapView(view, header);
   },
 
   searchResults: function(location, time) {
@@ -37,17 +48,27 @@ Lunchin.Routers.Router = Backbone.Router.extend({
       time: time
     });
     openings.fetch();
+    
     var view = new Lunchin.Views.SearchResults({
       collection: openings,
       location: location
     });
-    this._swapView(view);
+    
+    var header = new Lunchin.Views.SearchForm({
+      input: this.location
+    });
+    
+    this._swapView(view, header);
   },
 
-  _swapView: function(view) {
+  _swapView: function(view, header) {
     this._currentView && this._currentView.remove();
     this._currentView = view;
+    this._currentHeader && this._currentHeader.remove();
+    this._currentHeader = header;
+    this.$headerEl.html(header.$el);
     this.$rootEl.html(view.$el);
+    header && header.render();
     view.render();
   }
 });
