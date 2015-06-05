@@ -4,17 +4,22 @@ Lunchin.Views.SearchForm = Backbone.View.extend({
   template: JST['search/search_form'],
 
   initialize: function(options) {
-    if(options.input) {
-      this.input = options.input;
-    } else {
-      this.input = '';
-    }
+    this.location = options.location;
+    this.time = options.time;
   },
 
   render: function() {
-    var content = this.template({input: this.input});
+    var content = this.template({
+      location: this.location,
+      time: this.time
+    });
     this.$el.html(content);
-    $('.datetimepicker').datetimepicker();
+    $('.datetimepicker').datetimepicker({
+      format: 'MMMM Do, h:mm A',
+    });
+    if(!!this.time && this.time !== 'now') {
+      $('.datetimepicker').data("DateTimePicker").defaultDate(moment.unix(this.time));
+    }
     return this;
   },
 

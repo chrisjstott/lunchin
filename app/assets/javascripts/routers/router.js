@@ -2,7 +2,7 @@ Lunchin.Routers.Router = Backbone.Router.extend({
 
   initialize: function(options) {
     this.currentUserId = options.currentUserId;
-    this.businesses = new Lunchin.Collections.Businesses;
+    this.businesses = new Lunchin.Collections.Businesses();
     this.$headerEl = $('#header');
     this.$rootEl = $('#main');
   },
@@ -16,17 +16,14 @@ Lunchin.Routers.Router = Backbone.Router.extend({
   },
 
   newSearch: function() {
-    var view = new Lunchin.Views.NewSearch;
+    var view = new Lunchin.Views.NewSearch();
     this._swapView(view, '');
   },
 
   businessShow: function(id) {
     var business = this.businesses.getOrFetch(id);
     var view = new Lunchin.Views.BusinessShow({ model: business });
-
-    var header = new Lunchin.Views.SearchForm({
-      input: this.location
-    });
+    var header = new Lunchin.Views.SearchForm();
 
     this._swapView(view, header);
   },
@@ -34,10 +31,7 @@ Lunchin.Routers.Router = Backbone.Router.extend({
   reviewForm: function(id) {
     var business = this.businesses.getOrFetch(id);
     var view = new Lunchin.Views.ReviewForm({ model: business });
-    
-    var header = new Lunchin.Views.SearchForm({
-      input: this.location
-    });
+    var header = new Lunchin.Views.SearchForm();
 
     this._swapView(view, header);
   },
@@ -55,7 +49,8 @@ Lunchin.Routers.Router = Backbone.Router.extend({
     });
     
     var header = new Lunchin.Views.SearchForm({
-      input: this.location
+      location: location,
+      time: time
     });
     
     this._swapView(view, header);
