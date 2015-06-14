@@ -23,7 +23,7 @@ Lunchin.Routers.Router = Backbone.Router.extend({
   businessShow: function(id) {
     var business = this.businesses.getOrFetch(id);
     var view = new Lunchin.Views.BusinessShow({ model: business });
-    var header = new Lunchin.Views.SearchForm();
+    var header = new Lunchin.Views.SearchForm({});
 
     this._swapView(view, header);
   },
@@ -31,7 +31,7 @@ Lunchin.Routers.Router = Backbone.Router.extend({
   reviewForm: function(id) {
     var business = this.businesses.getOrFetch(id);
     var view = new Lunchin.Views.ReviewForm({ model: business });
-    var header = new Lunchin.Views.SearchForm();
+    var header = new Lunchin.Views.SearchForm({});
 
     this._swapView(view, header);
   },

@@ -13,6 +13,7 @@
  */
 $brand-primary: #b22222;
 $brand-danger: #8A0F01;
+$container-large-desktop: 970px;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -134,8 +135,8 @@ li {
 #map-canvas {
   border: 1px gray solid;
   border-radius: 5px;
-  height: 450px;
-  width: 450px;
+  height: 389px;
+  width: 389px;
 }
 
 .name-rating {
@@ -164,8 +165,7 @@ li {
 }
 
 .review-button {
-  float: right;
-  margin: 20px 100px;
+  margin-top: 150px;
 }
 
 .review-form-body label {

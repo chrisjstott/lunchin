@@ -8,7 +8,7 @@ Lunchin.Models.Business = Backbone.Model.extend({
     return this._reviews;
   },
 
-  openings: function() {
+  upcomingOpenings: function() {
     if (!this._openings) {
       this._openings = new Lunchin.Collections.Openings([], { location: '', time: '' });
     }
@@ -21,8 +21,8 @@ Lunchin.Models.Business = Backbone.Model.extend({
       delete response.reviews;
     }
 
-    if (response.openings) {
-      this.openings().set(response.openings);
+    if (response.upcoming_openings) {
+      this.upcomingOpenings().set(response.upcoming_openings);
       delete response.openings;
     }
     

@@ -1,0 +1,27 @@
+<div class="group">
+
+  <div class="name-rating">
+    <h1 class="business-name"><%= business.escape('name') %></h1>
+    <img src="https://s3-us-west-1.amazonaws.com/lunchin/assets/<%= business.escape('average_rating') %>stars.png"
+         alt="<%= business.escape('average_rating') %> stars"
+         class="rating-image"/>
+  </div>
+
+  <a href="/session/new" class="btn-lg btn-primary review-button">Write a Review</a>
+</div>
+
+<div class="info-and-photos group">
+  <div class="map-and-info">
+    <img
+      src="https://maps.googleapis.com/maps/api/staticmap?size=275x240&markers=<%= openings[0].escape('location') %>&style=feature:poi|element:labels|visibility:off"/>
+    <p style="text-align:center;"><b><%= openings[0].escape('location') %></b></p>
+  </div>
+  <div class="food-photos">
+    <img src="http://lorempixel.com/200/200/food/?1" alt="" />
+    <img src="http://lorempixel.com/200/200/food/?2" alt="" />
+    <img src="http://lorempixel.com/200/200/food/?3" alt="" />
+  </div>
+</div>
+
+<ul class="reviews">
+</ul>
