@@ -14,23 +14,19 @@
   <div class='col-md-4'>
     <img src='<%= business.escape('photo_url') %>' class='img-responsive img-rounded'/>
   </div>
-  <div class='col-md-4'>
-    <h3>Upcoming Openings:</h3>
-    <div class="list-group">
-      <% for(var i=0; i<5; i++) {%>
-        <% if (!!upcomingOpenings[i]) { %>
-          <a href='#' class='list-group-item'><%= upcomingOpenings[i].escape('location') %></a>
-        <% } %>
-      <% } %>
-    </div>
-  </div>
-  <div class='col-md-4'>
+  <div class='openings-widget'>
   </div>
 </div>
 
 <div class='row'>
   <div class='col-md-12'>
-    <a href="/session/new" class="btn-lg btn-primary review-button">Write a Review</a>
+    <a
+      <% if(signedIn) { %>
+        href="/#businesses/<%= business.escape('id') %>/review"
+      <% } else { %>
+        href="/session/new"
+      <% } %>
+      class="btn-lg btn-primary review-button">Write a Review</a>
   </div>
 </div>
 

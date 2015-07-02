@@ -10,7 +10,13 @@ Lunchin.Views.BusinessShow = Backbone.CompositeView.extend({
     this.upcomingOpenings = this.model.upcomingOpenings();
     
     this.listenTo(this.model, 'sync', this.render);
+    this.listenTo(this.model, 'sync', this.addOpenings);
     this.listenTo(this.model, 'sync', this.addReviews);
+  },
+  
+  addOpenings: function() {
+    var subview = new Lunchin.Views.OpeningsWidget({ collection: this.upcomingOpenings });
+    this.addSubview('.openings-widget', subview);
   },
 
   addReviews: function() {
@@ -22,20 +28,11 @@ Lunchin.Views.BusinessShow = Backbone.CompositeView.extend({
     this.addSubview('.reviews', subview);
   },
 
-  clickReview: function(event) {
-    if (!!Lunchin.currentUserId) {
-      event.preventDefault();
-      Backbone.history.navigate(
-        "businesses/" + this.model.id + "/review",
-        { trigger: true }
-      );
-    }
-  },
-
   render: function() {
     var content = this.template({
       business: this.model,
-      upcomingOpenings: this.upcomingOpenings.models
+      upcomingOpenings: this.upcomingOpenings.models,
+      signedIn: !!Lunchin.currentUserId
     });
     this.$el.html(content);
     this.attachSubviews();

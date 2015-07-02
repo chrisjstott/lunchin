@@ -1,0 +1,24 @@
+<div class="col-md-4">
+  <div class="panel panel-default">
+    <div class="panel-heading openings-heading">
+      Upcoming Openings
+    </div>
+    <div class="list-group">
+      <% for(var i=0; i<5; i++) {%>
+        <% if (!!openings[i]) { %>
+          <a href='#' class='list-group-item opening'>
+            <%= moment(openings[i].escape('start_time')).format("ddd, MMMM Do") %>
+            <br>
+            <%= moment(openings[i].escape('start_time')).format("h:mm A") %> - <%= moment(openings[i].escape('end_time')).format("h:mm A") %>
+            <br>
+            <%= openings[i].escape('location') %>
+          </a>
+        <% } %>
+      <% } %>
+    </div>
+  </div>
+</div>
+<div class="col-md-4">
+  <img class="img-rounded"
+    src="https://maps.googleapis.com/maps/api/staticmap?size=300x300&markers=<%= openings[selected].escape('location') %>&style=feature:poi|element:labels|visibility:off"/>
+</div>

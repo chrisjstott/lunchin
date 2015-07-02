@@ -19,6 +19,15 @@ $container-large-desktop: 970px;
 @import "bootstrap";
 @import 'bootstrap-datetimepicker';
 
+.openings-heading {
+  font-size: 20px;
+}
+
+.opening {
+  font-size: 12px;
+  padding: 5px 10px;
+}
+
 .big-search {
   background-color: $brand-primary;
   width: 650px;

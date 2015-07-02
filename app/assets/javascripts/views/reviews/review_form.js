@@ -22,6 +22,7 @@ Lunchin.Views.ReviewForm = Backbone.CompositeView.extend({
   submit: function(event) {
     event.preventDefault();
     var attrs = $(event.currentTarget).serializeJSON();
+    // needs success/fail callbacks here
     this.model.reviews().create({
       business_id: this.model.id,
       rating: attrs.rating,
