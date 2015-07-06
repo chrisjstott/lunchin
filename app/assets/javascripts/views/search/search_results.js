@@ -5,10 +5,9 @@ Lunchin.Views.SearchResults = Backbone.CompositeView.extend({
   initialize: function(options) {
     this.location = options.location;
 
-    this.listenTo(this.collection, 'sync', this.addListings);
-    this.listenTo(this.collection, 'sync', this.addMap);
     this.listenTo(this.collection, 'sync', this.render);
-
+    this.listenTo(this.collection, 'sync', this.addMap);
+    this.listenTo(this.collection, 'sync', this.addListings);
   },
 
   addMap: function() {
@@ -26,7 +25,11 @@ Lunchin.Views.SearchResults = Backbone.CompositeView.extend({
   },
 
   addListings: function() {
-    this.collection.each(this.addListing.bind(this));
+    if (this.collection.any()) {
+      this.collection.each(this.addListing.bind(this));
+    } else {
+      $('.listings').html('<br>No results found. Try searching for a different date/time or location');
+    }
   },
 
   render: function() {
