@@ -21,14 +21,22 @@ module Api
       end
       
       if params[:time] == 'null' || params[:time] == 'now'
-        time = Time.now
+        @openings = Opening.where(
+          "end_time > :start_of_day AND start_time < :end_of_day",
+          start_of_day: Time.now.beginning_of_day,
+          end_of_day: Time.now.end_of_day
+        )
       elsif !!params[:time]
         time = Time.at(params[:time].to_i)
+        @openings = Opening.where("start_time < :time AND end_time > :time", time: time).near(location)
       else
-        time = Time.now
+        @openings = Opening.where(
+          "end_time > :start_of_day AND start_time < :end_of_day",
+          start_of_day: Time.now.beginning_of_day,
+          end_of_day: Time.now.end_of_day
+        )
       end
 
-      @openings = Opening.where("start_time < :time AND end_time > :time", time: time).near(location)
 
       render :index
     end
