@@ -25,7 +25,7 @@ module Api
           "end_time > :start_of_day AND start_time < :end_of_day",
           start_of_day: Time.now.beginning_of_day,
           end_of_day: Time.now.end_of_day
-        )
+        ).near(location)
       elsif !!params[:time]
         time = Time.at(params[:time].to_i)
         @openings = Opening.where("start_time < :time AND end_time > :time", time: time).near(location)
@@ -34,7 +34,7 @@ module Api
           "end_time > :start_of_day AND start_time < :end_of_day",
           start_of_day: Time.now.beginning_of_day,
           end_of_day: Time.now.end_of_day
-        )
+        ).near(location)
       end
 
 
