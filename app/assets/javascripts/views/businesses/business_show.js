@@ -1,10 +1,6 @@
 Lunchin.Views.BusinessShow = Backbone.CompositeView.extend({
   template: JST['businesses/show'],
 
-  events: {
-    'click a.review-button': 'clickReview'
-  },
-
   initialize: function() {
     this.reviews = this.model.reviews();
     this.upcomingOpenings = this.model.upcomingOpenings();

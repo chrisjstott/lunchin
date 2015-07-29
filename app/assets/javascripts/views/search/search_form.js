@@ -17,7 +17,7 @@ Lunchin.Views.SearchForm = Backbone.View.extend({
     $('.datetimepicker').datetimepicker({
       format: 'MMMM Do, h:mm A',
     });
-    if(!!this.time && this.time !== 'now') {
+    if(!!this.time && this.time !== 'today') {
       $('.datetimepicker').data("DateTimePicker").defaultDate(moment.unix(this.time));
     }
     return this;
@@ -30,7 +30,7 @@ Lunchin.Views.SearchForm = Backbone.View.extend({
     if (!!moment) {
       time = moment.format('X');
     } else {
-      time = 'now';
+      time = 'today';
     }
     
     var location = $(event.target).serializeJSON().location || 'San Francisco';

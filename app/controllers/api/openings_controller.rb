@@ -20,13 +20,7 @@ module Api
         location = "San Francisco"
       end
       
-      if params[:time] == 'null' || params[:time] == 'now'
-        @openings = Opening.where(
-          "end_time > :start_of_day AND start_time < :end_of_day",
-          start_of_day: Time.now.beginning_of_day,
-          end_of_day: Time.now.end_of_day
-        ).near(location)
-      elsif !!params[:time]
+      if !!params[:time] && params[:time] != 'null' && params[:time] != 'today'
         time = Time.at(params[:time].to_i)
         @openings = Opening.where("start_time < :time AND end_time > :time", time: time).near(location)
       else

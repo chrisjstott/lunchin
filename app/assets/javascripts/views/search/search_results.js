@@ -28,7 +28,7 @@ Lunchin.Views.SearchResults = Backbone.CompositeView.extend({
     if (this.collection.any()) {
       this.collection.each(this.addListing.bind(this));
     } else {
-      $('.listings').html('<br>No results found. Try searching for a different date/time or location');
+      $('.listings').html('<br>No results found. Try searching for a different location');
     }
   },
 

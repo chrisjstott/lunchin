@@ -6,7 +6,7 @@
     <div class="list-group">
       <% for(var i=0; i<5; i++) {%>
         <% if (!!openings[i]) { %>
-          <a href='#' class='list-group-item opening'>
+          <a href='#' class='list-group-item opening' data-id='<%= i %>'>
             <%= moment(openings[i].escape('start_time')).format("ddd, MMMM Do") %>
             <br>
             <%= moment(openings[i].escape('start_time')).format("h:mm A") %> - <%= moment(openings[i].escape('end_time')).format("h:mm A") %>
@@ -19,6 +19,6 @@
   </div>
 </div>
 <div class="col-md-4">
-  <img class="img-rounded"
-    src="https://maps.googleapis.com/maps/api/staticmap?size=300x300&markers=<%= openings[selected].escape('location') %>&style=feature:poi|element:labels|visibility:off"/>
+  <img class="img-rounded static-map"
+    src="https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=300x300&markers=<%= openings[0].escape('location') %>&style=feature:poi|element:labels|visibility:off"/>
 </div>

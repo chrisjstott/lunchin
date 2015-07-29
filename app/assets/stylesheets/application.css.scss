@@ -19,6 +19,10 @@ $container-large-desktop: 970px;
 @import "bootstrap";
 @import 'bootstrap-datetimepicker';
 
+.review-button-row {
+  margin-top: 25px;
+}
+
 .openings-heading {
   font-size: 20px;
 }
@@ -171,10 +175,6 @@ li {
 .review-author-info {
   float: left;
   margin-right: 15px;
-}
-
-.review-button {
-  margin-top: 150px;
 }
 
 .review-form-body label {
