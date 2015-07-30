@@ -19,6 +19,15 @@ $container-large-desktop: 970px;
 @import "bootstrap";
 @import 'bootstrap-datetimepicker';
 
+.review-user-pic {
+  float: left;
+  margin-right: 5px;
+}
+
+.review-user-info {
+  float: left;
+}
+
 .review-button-row {
   margin-top: 25px;
 }
@@ -195,12 +204,6 @@ li {
 
 .reviews {
   margin-top: 40px;
-}
-
-.reviews > li {
-  margin: 15px;
-  border-top: 1px solid gray;
-  padding: 15px;
 }
 
 .search-bar > * {

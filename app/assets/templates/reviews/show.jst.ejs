@@ -1,18 +1,22 @@
-<ul class="review-author-info">
-  <li>
-    <img src="
+<div class='panel panel-default'>
+<div class='row panel-body'>
+  <div class='col-md-3'>
+    <img class='img-rounded review-user-pic' src="
       <% if (review.get('author'.photo_url)) {%>
         <%= review.get('author').photo_url %>
       <% } else { %>
         <%= 'https://s3-us-west-1.amazonaws.com/lunchin/assets/user_60_square.png' %>
       <% } %>
     " >
-  </li>
-  <li><%= review.get('author').first_name %></li>
-</ul>
-
-<div class="review-rating-body">
-  <img class="small-rating-image" src="https://s3-us-west-1.amazonaws.com/lunchin/assets/<%= review.escape('rating') %>stars.png">
-  <br>
-  <%= review.escape('body') %>
+    <ul class='review-user-info'>
+      <li><strong><%= review.get('author').first_name %></strong></li>
+      <li><%= review.get('author').location %></li>
+    </ul>
+  </div>
+  <div class='col-md-9'>
+    <img class="small-rating-image" src="https://s3-us-west-1.amazonaws.com/lunchin/assets/<%= review.escape('rating') %>stars.png">
+    <br>
+    <%= review.escape('body') %>
+  </div>
+</div>
 </div>
