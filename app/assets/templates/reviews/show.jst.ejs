@@ -9,7 +9,7 @@
       <% } %>
     " >
     <ul class='review-user-info'>
-      <li><strong><%= review.get('author').first_name %></strong></li>
+      <li><strong><%= review.get('author').first_name + ' ' + review.get('author').last_name[0] %>.</strong></li>
       <li><%= review.get('author').location %></li>
     </ul>
   </div>

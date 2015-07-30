@@ -21,7 +21,7 @@ Lunchin.Views.MapShow = Backbone.View.extend({
   initMap: function (latLng) {
     var mapOptions = {
       center: { lat: 37.7577, lng: -122.4376 },
-      zoom: 15,
+      zoom: 13,
       styles: [{
         "featureType": "poi",
         "elementType": "labels",
